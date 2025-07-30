@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dettaglio Demografico</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../dettaglio/dettaglio.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body class="dettaglio-page">
+  <div class="detail-header">
+    <a href="../index.html" class="back-button">← Torna alla mappa</a>
+    <h1 id="detail-title"></h1>
+    <div class="detail-meta">
+      <span id="detail-type">Dati demografici</span>
+    </div>
+  </div>
+
+  <div class="detail-container">
+    <div class="detail-main">
+      <section class="data-section chart-section">
+        <div class="section-header">
+          <h2>Visualizzazione indicatori</h2>
+          <div class="chart-toggle-buttons">
+            <button class="active" data-chart="bar">Barre</button>
+            <button data-chart="trend">Trend per sezioni</button>
+            <button class="expand-chart">Espandi ▼</button>
+          </div>
+        </div>
+        <div id="detail-chart" class="chart-container"></div>
+      </section>
+    </div>
+
+    <aside class="detail-map-container">
+      <div id="detail-map" class="detail-map"></div>
+      <div class="map-legend">
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #b00;"></span>
+          <span>Elemento selezionato</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color" style="background-color: #666;"></span>
+          <span>Altri elementi</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="data-grid-section full-width">
+    <div class="section-header">
+      <h2>Dettaglio valori</h2>
+      <div class="search-box">
+        <input type="text" id="value-search" placeholder="Cerca indicatore...">
+      </div>
+    </div>
+    <div id="detail-values" class="values-grid"></div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="../elaborazione_demografica/charts_demografica.js"></script>
+  <script src="../elaborazione_demografica/detail_demografica_chart.js"></script>
+  <script type="module" src="./dettaglio_demografica.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+﻿Num.,ID,DENOMINAZIONE,ambito,DEFINIZIONE,FONTI,DATA RILASCIO,file
+1,Ter_1,Numero di sezioni del censimento,territorio,Numero di sezioni del censimento,"Istat, Basi Territoriali - Anno 2021",06-26-24,stat_data
+2,Ter_2,Superficie a fini statistici (Km2),territorio,Superficie in Km2,"Istat, Basi Territoriali - Anno 2021",06-26-24,stat_data
+3,Ter_3,Densità abitativa - Abitanti/Km2,territorio,Rapporto tra la popolazione residente nell'area e la relativa superficie in Km2,"Istat, Censimento della popolazione e delle abitazioni e Basi Territoriali - Anno 2021",06-26-24,stat_data
+4,Dem_1,Popolazione residente totale,demorgrafia,Popolazione totale al netto dei senza fissa dimora,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+5,Dem_2,Popolazione residente in età 0-14 anni,demorgrafia,Popolazione residente della classe di età 0-14 anni residente nell'area subcomunale,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+6,Dem_3,Stranieri residenti,demorgrafia,Popolazione residente straniera nell'area subcomunale,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+7,Dem_4,Indice di vecchiaia,demorgrafia,Rapporto percentuale tra la popolazione residente di 65 anni e oltre e la popolazione residente nella classe 0-14 anni,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+8,Dem_5,Incidenza dei residenti stranieri,demorgrafia,Rapporto tra la popolazione straniera e la popolazione residente per mille,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+9,Dem_6,Incidenza dei giovani fino a 24 anni,demorgrafia,Rapporto percentuale tra la popolazione nella classe di età 0-24 anni e la popolazione residente,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+10,Ist_1,Indice di non completamento del ciclo di scuola secondaria di primo grado,istruzione,Rapporto percentuale tra la popolazione nella classe di età 15-52 che non ha conseguito il diploma della scuola secondaria di primo grado e la popolazione totale della medesima classe di età,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+11,Ist_2,Indice di adulti con diploma o titolo terziario,istruzione,Rapporto percentuale tra la popolazione nella classe di età 25-64 che ha conseguito un diploma di scuola secondaria superiore o un titolo terziario e il totale della popolazione residente della medesima classe di età,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+12,Ist_3,Incidenza degli alunni delle scuole primarie a tempo pieno,istruzione,Rapporto percentuale tra gli alunni delle scuole statali primarie a tempo pieno e il totale degli alunni delle scuole statali primarie,Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023,12-16-24,stat_data
+13,Ist_4,Incidenza degli alunni stranieri nelle scuole primarie,istruzione,Rapporto percentuale tra gli alunni stranieri e il totale degli alunni nelle scuole statali primarie,Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023,12-16-24,stat_data
+14,Ist_5,Incidenza degli alunni stranieri nelle scuole secondarie di I grado,istruzione,Rapporto percentuale tra gli alunni stranieri e il toale degli alunni nelle scuole statali secondarie di I grado,Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023,12-16-24,stat_data
+15,Ist_6,Incidenza degli alunni stranieri nelle scuole secondarie di II grado,istruzione,Rapporto percentuale tra gli alunni stranieri e il totale degli alunni nelle scuole statali secondarie di II grado,Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023,12-16-24,stat_data
+16,Ist_7,Incidenza degli alunni stranieri nelle scuole,istruzione,Rapporto percentuale tra gli alunni stranieri e il totale degli alunni nelle scuole statali,Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023,12-16-24,stat_data
+17,Ist_8,Incidenza degli alunni tra i 6 e i 18 anni e la popolazione residente della stessa fascia di età,istruzione,Rapporto percentuale tra la popolazione nella classe di età 6-18 iscritta ad una scuola statale e il totale della popolazione residente della medesima classe di età,"Ministero dell'Istruzione e del Merito - Anno scolastico 2021-2022; Istat, Censimento della popolazione e delle abitazioni - Anno 2021",12-16-24,stat_data
+18,Ist_9,Incidenza degli alunni tra i 7 e i 9 anni e la popolazione residente della stessa fascia di età,istruzione,Rapporto percentuale tra la popolazione nella classe di età 7-9 iscritta a una scuola statale e il totale della popolazione residente della medesima classe di età,"Ministero dell'Istruzione e del Merito - Anno scolastico 2021-2022; Istat, Censimento della popolazione e delle abitazioni - Anno 2021",12-16-24,stat_data
+19,Eco_1,Tasso di occupazione (20-64 anni),economia e lavoro,Rapporto percentuale tra gli occupati 20-64 anni e la popolazione residente della medesima classe d’età,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+20,Eco_2,Tasso di disoccupazione (15 anni e più),economia e lavoro,Rapporto percentuale tra le persone di 15 anni e più in cerca di occupazione e le forze lavoro della medesima classe d'età,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+21,Vsm_1,Incidenza dei giovani che non studiano e non lavorano,vulnerabilita sociale,Rapporto percentuale tra la popolazione residente nella classe di età 15- 29 anni che non studia e non lavora e la popolazione residente nella medesima classe di età,"Istat, integrazione dei dati del Censimento della popolazione e delle abitazioni - Anno 2021 con informazioni provenienti da archivi amministrativi",06-26-24,stat_data
+22,Vsm_2,Incidenza delle famiglie con potenziale disagio economico,vulnerabilita sociale,Rapporto percentuale tra il numero di famiglie con figli la cui persona di riferimento ha fino a 64 anni e nelle quali nessun componente è occupato o percettore di pensione da lavoro e il totale delle famiglie,"Istat, integrazione dei dati del Censimento della popolazione e delle abitazioni - Anno 2021 con informazioni provenienti da archivi amministrativi",06-26-24,stat_data
+23,Vsm_3,Tasso di alloggi impropri,vulnerabilita sociale,Rapporto percentuale tra altri tipi di alloggio occupati (luoghi di riparo non identificabili come abitazioni) e il totale delle abitazioni e degli altri tipi di alloggio,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+24,Dis_1,"Incidenza percentuale della popolazione di 67 anni  e oltre che vive da sola, senza casa di proprietà ",disagio socio-economico,Rapporto tra la popolazione di 67 anni e oltre che vive da sola e non possiede casa di proprietà (sono escluse le convivenze) sul totale della popolazione di 67 anni e più,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021; Catasto immobiliare - Anno 2020",06-26-24,stat_data
+25,Dis_3,Percentuale di famiglie che non vivono in abitazione di proprietà,disagio socio-economico,Rapporto tra numero di famiglie che non vivono in casa di proprietà e numero totale di famiglie,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021",06-26-24,stat_data
+26,Dis_4,"Incidenza percentuale di lavoratori precari  35-64 anni che hanno un rapporto di lavoro dipendente di tipo ""interinale"" o ""occasionale"" sul totale degli occupati 35-64 anni",disagio socio-economico,"Rapporto tra il numero di lavoratori precari (""interinali"", ""occasionali"") 35-64 sul totale degli occupati in età 35-64","Istat, Censimento della popolazione e delle abitazioni - Anno 2021;  INAIL - Anno 2021; INPS - Anno 2021",06-26-24,stat_data
+27,Dis_8a,"Uscita precoce dal sistema di istruzione (18-24 anni, totale) ",disagio socio-economico,Rapporto tra il totale delle persone di 18-24 anni con al più il diploma di scuola secondaria di primo grado (licenza media) e  non iscritti a nessun corso regolare di studio e  il totale delle persone di 18-24 anni,"Istat, integrazione dei dati del Censimento della popolazione e delle abitazioni - Anno 2021 con informazioni provenienti da archivi amministrativi",06-26-24,stat_data
+28,Dis_8b,"Uscita precoce dal sistema di istruzione (18-24 anni, stranieri) ",disagio socio-economico,Rapporto tra il totale degli stranieri di 18-24 anni con al più il diploma di scuola secondaria di primo grado (licenza media) e  non iscritti a nessun corso regolare di studio e  il totale degli stranieri di 18-24 anni,"Istat, integrazione dei dati del Censimento della popolazione e delle abitazioni - Anno 2021 con informazioni provenienti da archivi amministrativi",06-26-24,stat_data
+29,Dis_8c,"Uscita precoce dal sistema di istruzione (18-24 anni, femmine) ",disagio socio-economico,Rapporto tra le femmine di 18-24 anni con al più il diploma di scuola secondaria di primo grado (licenza media) e  non iscritti a nessun corso regolare di studio e  il totale delle femmine di 18-24 anni,"Istat, integrazione dei dati del Censimento della popolazione e delle abitazioni - Anno 2021 con informazioni provenienti da archivi amministrativi",06-26-24,stat_data
+30,Dis_8d,Giovani di 18-24 anni usciti precocemente dal sistema di istruzione con genitori senza diploma,disagio socio-economico,"Incidenza delle persone di 18-24 anni uscite precocemente dal sistema di istruzione con genitori nella medesima condizione, sul totale delle persone di 18-24 anni uscite precocemente dal sistema di istruzione","Istat, integrazione dei dati del Censimento della popolazione e delle abitazioni - Anno 2021 con informazioni provenienti da archivi amministrativi",12-16-24,stat_data
+31,Dis_9,Indice di affollamento delle abitazioni occupate,disagio socio-economico,numero di occupanti / numero di vani,"Istat, Censimento della popolazione e delle abitazioni - Anno 2021; Catasto immobiliare (Anno 2020)",06-26-24,stat_data
+32,OMI,Valore immobiliare medio delle abitazioni residenziali,valore immobiliare,"Media dei valori immobilari delle abitazioni residenziali (euro al m2), ponderata per la popolazione residente",Osservatorio immobiliare italiano - Anno 2023 (II semestre),12-16-24,stat_data
+33,Ser_1a,Numero di Musei e Istituzioni similari,dotazione di servizi,Numero di Musei e Istituzioni similari per Area subcomunale,"Istat, Indagine sui musei e istituzioni similari - Anno 2022",06-26-24,stat_data
+34,Ser_1b,Visitatori dei Musei e delle Istituzioni similari,dotazione di servizi,Numero dei visitatori dei Musei e delle Istituzioni similari per Area subcomunale,"Istat, Indagine sui musei e istituzioni similari - Anno 2022",06-26-24,stat_data
+35,Ser_1c,Musei con accesso ai disabili,dotazione di servizi,"Numero di musei che garantiscono condizioni di accesso per le persone con disabilità (motoria, visiva, ecc.)","Istat, Indagine sui musei e istituzioni similari - Anno 2022",12-16-24,stat_data
+36,Ser_2,Ospedali con pronto soccorso,dotazione di servizi,Numero di Ospedali con pronto soccorso (anche solo pediatrico) o Dipartimento di Emergenza e Accettazione (DEA) di I o II livello,Nostre elaborazioni su dati Ministero della salute – Anno 2019,06-26-24,stat_data
+37,Ser_3,Numero di biblioteche ,dotazione di servizi,Numero di biblioteche per Area subcomunale,"Istat, Indagine sulle biblioteche - Anno 2022",12-16-24,stat_data
+38,Ser_4,Numero di strutture con servizi integrativi per la prima infanzia,dotazione di servizi,"Numero di strutture che offrono servizi integrativi per la prima infanzia (0-3 anni), per Area subcomunale","Istat, Rilevazione sui nidi e servizi integrativi per la prima infanzia - Anno 2021",12-16-24,stat_data
+39,Ser_5,Numero di scuole primarie,dotazione di servizi,Numero di scuole statali primarie per Area subcomunale,Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023,12-16-24,stat_data
+40,Ser_6,Numero di scuole primarie a tempo pieno,dotazione di servizi,Numero di scuole statali primarie a tempo pieno per Area subcomunale,Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023,12-16-24,stat_data
+41,Ser_7,Numero di scuole secondarie di I grado,dotazione di servizi,Numero di scuole statali secondarie di I grado per Area subcomunale,Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023,12-16-24,stat_data
+42,Ser_8,Numero di scuole secondarie di II grado,dotazione di servizi,Numero di scuole statali secondarie di II grado per Area subcomunale,Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023,12-16-24,stat_data
+43,Ser_9,Numero totale di scuole,dotazione di servizi,Numero di scuole statali per Area subcomunale,Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023,12-16-24,stat_data
+44,Ser_10,Numero di stazioni ferroviarie,dotazione di servizi,Numero di stazioni ferroviarie con servizio passeggeri attivo per Area subcomunale,Rete Ferroviaria Italiana (RFI) - Anno 2022 ,12-16-24,stat_data
+45,Ser_11a,Prossimità dei musei ,accessibilità ai servizi,"Distanza in Km, su strada percorribile con mezzo privato, per raggiungere il museo o istituzione similare più vicino, partendo dal centroide dalla singola Area subcomunale","Istat, Indagine sui musei e istituzioni similari - Anno 2022 e Grafo stradale TOM-TOM - Anno 2022",12-16-24,stat_data
+46,Ser_11b,Accessibilità della popolazione residente ai musei,accessibilità ai servizi,"Quota di popolazione che risiede in sezioni di censimento che distano al più 1,5 Km dal museo o istituzione similare più vicino, per Area subcomunale","Istat, Indagine sui musei e istituzioni similari - Anno 2022; Grafo stradale TOM-TOM - Anno 2022; Censimento della popolazione e delle Abitazioni - Anno 2021",12-16-24,stat_data
+47,Ser_12a,Prossimità delle biblioteche,accessibilità ai servizi,"Distanza in Km, su strada percorribile con mezzo privato, che separa la biblioteca più vicina dal centroide dalla singola Area subcomunale","Istat, Indagine sulle biblioteche - Anno 2022; Grafo stradale TOM-TOM - Anno 2022",12-16-24,stat_data
+48,Ser_12b,Accessibilità della popolazione residente alle biblioteche,accessibilità ai servizi,"Quota di popolazione che risiede in sezioni di censimento che distano al più 1,5 Km dalla biblioteca più vicina, per Area subcomunale","Istat, Indagine sulle biblioteche - Anno 2022; Grafo stradale TOM-TOM - Anno 2022; Censimento della popolazione e delle Abitazioni - Anno 2021",12-16-24,stat_data
+49,Ser_13a,Prossimità degli ospedali,accessibilità ai servizi,"Tempo di percorrenza minimo in minuti, su strada e con mezzo privato, per raggiungere un ospedale con pronto soccorso o DEA di I o II livello, partendo dal centroide dalla singola Area subcomunale",Ministero della Salute - Anno 2019; Grafo stradale TOM-TOM - Anno 2022,12-16-24,stat_data
+50,Ser_13b,Accessibilità della popolazione residente agli ospedali,accessibilità ai servizi,"Quota di popolazione che risiede in sezioni di censimento che distano al più 8 minuti dall'ospedale con pronto soccorso o DEA di I o II livello più vicino, per Area subcomunale",Ministero della Salute - Anno 2019; Grafo stradale TOM-TOM - Anno 2022; Censimento della popolazione e delle Abitazioni - Anno 2021,12-16-24,stat_data
+51,Ser_14a,Prossimità delle scuole,accessibilità ai servizi,"Distanza in Km, su strada percorribile con mezzo privato, che separa la scuola (infanzia, primaria, secondaria di I grado, isituto comprensivo) più vicina dal centroide dalla singola Area subcomunale",Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023; Grafo stradale TOM-TOM - Anno 2022,12-16-24,stat_data
+52,Ser_14b,Accessibilità della popolazione residente ai servizi educativi per la prima infanzia,accessibilità ai servizi,"Quota di popolazione che risiede in sezioni di censimento che distano al più 1,5 km dalla struttura di servizi per l'infanzia (0-3 anni) più vicina, per Area subcomunale","Istat, Rilevazione sui nidi e servizi integrativi per la prima infanzia - Anno 2021; Grafo stradale TOM-TOM - Anno 2022; Censimento della popolazione e delle Abitazioni - Anno 2021",12-16-24,stat_data
+53,Ser_14c,Accessibilità della popolazione residente alle scuole,accessibilità ai servizi,"Quota di popolazione che risiede in sezioni di censimento che distano al più 1,5 Km dalla scuola (infanzia, primaria, secondaria di I grado, istituto comprensivo) più vicina, per Area subcomunale",Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023; Grafo stradale TOM-TOM - Anno 2022; Censimento della popolazione e delle Abitazioni - Anno 2021,12-16-24,stat_data
+54,Ser_14d,Accessibilità della popolazione residente alle scuole primarie a tempo pieno,accessibilità ai servizi,"Quota di popolazione che risiede in sezioni di censimento che distano al più 1,5 Km dalla scuola primaria a tempo pieno più vicina, per Area subcomunale",Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023; Grafo stradale TOM-TOM - Anno 2022; Censimento della popolazione e delle Abitazioni - Anno 2021,12-16-24,stat_data
+55,Ser_14e,Accessibilità della popolazione residente alle scuole secondarie di II grado,accessibilità ai servizi,"Quota di popolazione che risiede in sezioni di censimento che distano al più 1,5 Km dalla scuola secondaria di II grado più vicina, per Area subcomunale",Ministero dell'Istruzione e del Merito - Anno scolastico 2022-2023; Grafo stradale TOM-TOM - Anno 2022; Censimento della popolazione e delle Abitazioni - Anno 2021,12-16-24,stat_data
+56,Ser_15a,Prossimità delle stazioni ferroviarie,accessibilità ai servizi,"Distanza in Km, su strada percorribile con mezzo privato, per raggiungere la stazione ferroviaria con servizio passeggeri attivo più vicina, partendo dal centroide dalla singola Area subcomunale",Rete Ferroviaria Italiana (RFI) - Anno 2022; Grafo stradale TOM-TOM - Anno 2022,12-16-24,stat_data
+57,Ser_15b,Accessibilità della popolazione residente alle stazioni ferroviarie,accessibilità ai servizi,"Quota di popolazione che risiede in sezioni di censimento che distano al più 1,5 Km dalla stazione ferroviaria (con servizio passeggeri attivo) più vicina, per Area subcomunale",Rete Ferroviaria Italiana (RFI) - Anno 2022; Grafo stradale TOM-TOM - Anno 2022; Censimento della popolazione e delle Abitazioni - Anno 2021,12-16-24,stat_data
+58,P2,Popolazione residente - maschi,divisi per sesso,,,,demografica
+59,P3,Popolazione residente - femmine,divisi per sesso,,,,demografica
+60,P14,Popolazione residente - età < 5 anni,divisi per età,,,,demografica
+61,P15,Popolazione residente - età 5 - 9 anni,divisi per età,,,,demografica
+62,P16,Popolazione residente - età 10 - 14 anni,divisi per età,,,,demografica
+63,P17,Popolazione residente - età 15 - 19 anni,divisi per età,,,,demografica
+64,P18,Popolazione residente - età 20 - 24 anni,divisi per età,,,,demografica
+65,P19,Popolazione residente - età 25 - 29 anni,divisi per età,,,,demografica
+66,P20,Popolazione residente - età 30 - 34 anni,divisi per età,,,,demografica
+67,P21,Popolazione residente - età 35 - 39 anni,divisi per età,,,,demografica
+68,P22,Popolazione residente - età 40 - 44 anni,divisi per età,,,,demografica
+69,P23,Popolazione residente - età 45 - 49 anni,divisi per età,,,,demografica
+70,P24,Popolazione residente - età 50 - 54 anni,divisi per età,,,,demografica
+71,P25,Popolazione residente - età 55 - 59 anni,divisi per età,,,,demografica
+72,P26,Popolazione residente - età 60 - 64 anni,divisi per età,,,,demografica
+73,P27,Popolazione residente - età 65 - 69 anni,divisi per età,,,,demografica
+74,P28,Popolazione residente - età 70 - 74 anni,divisi per età,,,,demografica
+75,P29,Popolazione residente - età > 74 anni,divisi per età e sesso,,,,demografica
+76,P30,Popolazione residente - maschi - età < 5 anni,divisi per età e sesso,,,,demografica
+77,P31,Popolazione residente - maschi - età 5 - 9 anni,divisi per età e sesso,,,,demografica
+78,P32,Popolazione residente - maschi - età 10 - 14 anni,divisi per età e sesso,,,,demografica
+79,P33,Popolazione residente - maschi - età 15 - 19 anni,divisi per età e sesso,,,,demografica
+80,P34,Popolazione residente - maschi - età 20 - 24 anni,divisi per età e sesso,,,,demografica
+81,P35,Popolazione residente - maschi - età 25 - 29 anni,divisi per età e sesso,,,,demografica
+82,P36,Popolazione residente - maschi - età 30 - 34 anni,divisi per età e sesso,,,,demografica
+83,P37,Popolazione residente - maschi - età 35 - 39 anni,divisi per età e sesso,,,,demografica
+84,P38,Popolazione residente - maschi - età 40 - 44 anni,divisi per età e sesso,,,,demografica
+85,P39,Popolazione residente - maschi - età 45 - 49 anni,divisi per età e sesso,,,,demografica
+86,P40,Popolazione residente - maschi - età 50 - 54 anni,divisi per età e sesso,,,,demografica
+87,P41,Popolazione residente - maschi - età 55 - 59 anni,divisi per età e sesso,,,,demografica
+88,P42,Popolazione residente - maschi - età 60 - 64 anni,divisi per età e sesso,,,,demografica
+89,P43,Popolazione residente - maschi - età 65 - 69 anni,divisi per età e sesso,,,,demografica
+90,P44,Popolazione residente - maschi - età 70 - 74 anni,divisi per età e sesso,,,,demografica
+91,P45,Popolazione residente - maschi - età > 74 anni,divisi per età e sesso,,,,demografica
+92,P67,Popolazione residente - femmine - età < 5 anni,divisi per età e sesso,,,,demografica
+93,P68,Popolazione residente - femmine - età 5 - 9 anni,divisi per età e sesso,,,,demografica
+94,P69,Popolazione residente - femmine - età 10 - 14 anni,divisi per età e sesso,,,,demografica
+95,P70,Popolazione residente - femmine - età 15 - 19 anni,divisi per età e sesso,,,,demografica
+96,P71,Popolazione residente - femmine - età 20 - 24 anni,divisi per età e sesso,,,,demografica
+97,P72,Popolazione residente - femmine - età 25 - 29 anni,divisi per età e sesso,,,,demografica
+98,P73,Popolazione residente - femmine - età 30 - 34 anni,divisi per età e sesso,,,,demografica
+99,P74,Popolazione residente - femmine - età 35 - 39 anni,divisi per età e sesso,,,,demografica
+100,P75,Popolazione residente - femmine - età 40 - 44 anni,divisi per età e sesso,,,,demografica
+101,P76,Popolazione residente - femmine - età 45 - 49 anni,divisi per età e sesso,,,,demografica
+102,P77,Popolazione residente - femmine - età 50 - 54 anni,divisi per età e sesso,,,,demografica
+103,P78,Popolazione residente - femmine - età 55 - 59 anni,divisi per età e sesso,,,,demografica
+104,P79,Popolazione residente - femmine - età 60 - 64 anni,divisi per età e sesso,,,,demografica
+105,P80,Popolazione residente - femmine - età 65 - 69 anni,divisi per età e sesso,,,,demografica
+106,P81,Popolazione residente - femmine - età 70 - 74 anni,divisi per età e sesso,,,,demografica
+107,P82,Popolazione residente - femmine - età > 74 anni,divisi per età e sesso,,,,demografica
+108,P83,Popolazione residente - totale di 9 anni e più,9 anni e più,,,,demografica
+109,P84,Popolazione residente - maschi di 9 anni e più,9 anni e più,,,,demografica
+110,P85,Popolazione residente - femmine di 9 anni e più,9 anni e più,,,,demografica
+111,P86,Popolazione residente - totale di 9 anni e più senza titolo di studio,9 anni e più,,,,demografica
+112,P87,Popolazione residente - totale di 9 anni e più con licenza elementare,9 anni e più,,,,demografica
+113,P88,Popolazione residente - totale di 9 anni e più con licenza media,9 anni e più,,,,demografica
+114,P89,Popolazione residente - totale di 9 anni e più con Diploma di scuola secondaria superiore incluse le Qualifiche professionali,9 anni e più,,,,demografica
+115,P90,Popolazione residente - totale di 9 anni e più con titoli terziari di primo o secondo livello (inclusi i dottori di ricerca),9 anni e più,,,,demografica
+116,P91,Popolazione residente - maschi di 9 anni e più senza titolo di studio,9 anni e più,,,,demografica
+117,P92,Popolazione residente - maschi di 9 anni e più con licenza elementare,9 anni e più,,,,demografica
+118,P93,Popolazione residente - maschi di 9 anni e più con licenza media,9 anni e più,,,,demografica
+119,P94,Popolazione residente - maschi di 9 anni e più con Diploma di scuola secondaria superiore incluse le Qualifiche professionali,9 anni e più,,,,demografica
+120,P95,Popolazione residente - maschi di 9 anni e più con titoli terziari di primo o secondo livello (inclusi i dottori di ricerca),9 anni e più,,,,demografica
+121,P96,Popolazione residente - femmine di 9 anni e più senza titolo di studio,9 anni e più,,,,demografica
+122,P97,Popolazione residente - femmine di 9 anni e più con licenza elementare,9 anni e più,,,,demografica
+123,P98,Popolazione residente - femmine di 9 anni e più con licenza media,9 anni e più,,,,demografica
+124,P99,Popolazione residente - femmine di 9 anni e più con Diploma di scuola secondaria superiore incluse le Qualifiche professionali,9 anni e più,,,,demografica
+125,P100,Popolazione residente - femmine di 9 anni e più con titoli terziari di primo o secondo livello (inclusi i dottori di ricerca),9 anni e più,,,,demografica
+126,P101,Popolazione residente - totale occupati di 15-64 anni,occupati,,,,demografica
+127,P102,Popolazione residente - maschi occupati di 15-64 anni,occupati,,,,demografica
+128,P103,Popolazione residente - femmine occupate di 15-64 anni,occupati,,,,demografica
+129,IT1,Popolazione residente - italiani - età 0 - 14 anni,divisi per età,,,,demografica
+130,IT2,Popolazione residente - italiani - età 15 - 64 anni,divisi per età,,,,demografica
+131,IT3,Popolazione residente - italiani - età 65 anni e più,divisi per età,,,,demografica
+132,IT4,Popolazione residente - maschi italiani - età 0 - 14 anni,divisi per età e sesso,,,,demografica
+133,IT5,Popolazione residente - maschi  italiani - età 15 - 64 anni,divisi per età e sesso,,,,demografica
+134,IT6,Popolazione residente - maschi  italiani - età 65 anni e più,divisi per età e sesso,,,,demografica
+135,IT7,Popolazione residente - femmine italiane - età 0 - 14 anni,divisi per età e sesso,,,,demografica
+136,IT8,Popolazione residente - femmine italiane - età 15 - 64 anni,divisi per età e sesso,,,,demografica
+137,IT9,Popolazione residente - femmine italiane -età 65 anni e più,divisi per età e sesso,,,,demografica
+138,IT10,Popolazione residente - occupati italiani di 15-64 anni,occupati,,,,demografica
+139,IT11,Popolazione residente - occupati italiani maschi di 15-64 anni,occupati,,,,demografica
+140,IT12,Popolazione residente - occupate italiane femmine di 15-64 anni,occupati,,,,demografica
+141,ST1,Stranieri e apolidi residenti in Italia - totale,Stranieri e apolidi,,,,demografica
+142,ST2,Stranieri e apolidi residenti in Italia - maschi,Stranieri e apolidi,,,,demografica
+143,ST2_B,Stranieri e apolidi residenti in Italia - femmine,Stranieri e apolidi,,,,demografica
+144,ST3,Stranieri e apolidi residenti in Italia - età 0 - 29 anni,Stranieri e apolidi,,,,demografica
+145,ST4,Stranieri e apolidi residenti in Italia - età 30 - 54 anni,Stranieri e apolidi,,,,demografica
+146,ST5,Stranieri e apolidi residenti in Italia - età 55 anni e più,Stranieri e apolidi,,,,demografica
+147,ST16,Stranieri residenti in Italia - totale UE,stranieri e residenti,,,,demografica
+148,ST17,Stranieri residenti in Italia - maschi UE,stranieri e residenti,,,,demografica
+149,ST18,Stranieri residenti in Italia - femmine UE,stranieri e residenti,,,,demografica
+150,ST19,Stranieri residenti in Italia - totale EXTRA UE,stranieri e residenti,,,,demografica
+151,ST20,Stranieri residenti in Italia - maschi EXTRA UE,stranieri e residenti,,,,demografica
+152,ST21,Stranieri residenti in Italia - femmine EXTRA UE,stranieri e residenti,,,,demografica
+153,ST22,Stranieri e apolidi residenti in Italia - età 0 - 14 anni,Stranieri e apolidi residenti,,,,demografica
+154,ST23,Stranieri e apolidi residenti in Italia - età 15 - 64 anni,Stranieri e apolidi residenti,,,,demografica
+155,ST24,Stranieri e apolidi residenti in Italia - età 65 anni e più,Stranieri e apolidi residenti,,,,demografica
+156,ST25,Stranieri e apolidi residenti in Italia - maschi - età 0 - 14 anni,Stranieri e apolidi residenti,,,,demografica
+157,ST26,Stranieri e apolidi residenti in Italia - maschi - età 15 - 64 anni,Stranieri e apolidi residenti,,,,demografica
+158,ST27,Stranieri e apolidi residenti in Italia - maschi - età 65 anni e più,Stranieri e apolidi residenti,,,,demografica
+159,ST28,Stranieri e apolidi residenti in Italia - femmine - età 0 - 14 anni,Stranieri e apolidi residenti,,,,demografica
+160,ST29,Stranieri e apolidi residenti in Italia - femmine - età 15 - 64 anni,Stranieri e apolidi residenti,,,,demografica
+161,ST30,Stranieri e apolidi residenti in Italia - femmine - età 65 anni e più,Stranieri e apolidi residenti,,,,demografica
+162,ST31,Stranieri e apolidi residenti in Italia - occupati - età 15 - 64 anni,Stranieri e apolidi residenti,,,,demografica
+163,ST32,Stranieri e apolidi residenti in Italia - occupati maschi - età 15 - 64 anni,Stranieri e apolidi residenti,,,,demografica
+164,ST33,Stranieri e apolidi residenti in Italia - occupate femmine - età 15 - 64 anni,Stranieri e apolidi residenti,,,,demografica
+165,PF1,Famiglie residenti - totale,Famiglie residenti,,,,demografica
+166,PF3,Famiglie residenti - 1 componente,Famiglie residenti,,,,demografica
+167,PF4,Famiglie residenti - 2 componenti,Famiglie residenti,,,,demografica
+168,PF5,Famiglie residenti - 3 componenti,Famiglie residenti,,,,demografica
+169,PF6,Famiglie residenti - 4 componenti,Famiglie residenti,,,,demografica
+170,PF7,Famiglie residenti - 5 componenti,Famiglie residenti,,,,demografica
+171,PF8,Famiglie residenti - 6 e oltre componenti,Famiglie residenti,,,,demografica
+172,CIT_1_LKA,Sri Lanka,Stranieri per provenienza,,,,demografica
+173,CIT_2_UKR,Ucraina,Stranieri per provenienza,,,,demografica
+174,CIT_3_CHN,Cina,Stranieri per provenienza,,,,demografica
+175,CIT_4_PAK,Pakistan,Stranieri per provenienza,,,,demografica
+176,CIT_5_ROU,Romania,Stranieri per provenienza,,,,demografica
+177,CIT_6_BGD,Bangladesh,Stranieri per provenienza,,,,demografica
+178,CIT_7_PHL,Filippine,Stranieri per provenienza,,,,demografica
+179,CIT_8_NGA,Nigeria,Stranieri per provenienza,,,,demografica
+180,CIT_9_SEN,Senegal,Stranieri per provenienza,,,,demografica
+181,CIT_10_DOM,Repubblica Dominicana,Stranieri per provenienza,,,,demografica
+,,,Stranieri per provenienza,,,,demografica
