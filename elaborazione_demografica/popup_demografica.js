@@ -1,4 +1,5 @@
-// popup_demografica.js
+import { getRepoBasePath } from "../utils.js";
+
 export function createPopupContentDemografica({
     rawName,
     fieldsArray,
@@ -75,8 +76,10 @@ export function createPopupContentDemografica({
         detailBtn.className = 'dettaglio-btn';
         detailBtn.onclick = () => {
           const rawCode = rowData?.ASC_1LIV_COD;
-          window.location.href = `../dettaglio_demografica/dettaglio_demografica.html?feature=${encodeURIComponent(rawName)}&code=${rawCode}${group === 'municipality' ? '&group=municipality' : ''}&file=demografica`;        };
+          window.location.href = `${getRepoBasePath()}dettaglio_demografica/dettaglio_demografica.html?feature=${encodeURIComponent(rawName)}&code=${rawCode}${group === 'municipality' ? '&group=municipality' : ''}&file=demografica`;
+        };
         chartWrapper.appendChild(detailBtn);
+         
       
         // 📊 Container per grafico
         const chartContainer = document.createElement('div');

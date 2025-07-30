@@ -1,3 +1,5 @@
+import { getRepoBasePath } from "../utils.js";
+
 export function createPopupContent({
   rawName,
   fieldsArray,
@@ -60,7 +62,7 @@ export function createPopupContent({
     detailBtn.textContent = 'Dettaglio completo';
     detailBtn.className = 'dettaglio-btn';
     detailBtn.onclick = () => {
-      window.location.href = `../dettaglio/dettaglio.html?feature=${encodeURIComponent(rawName)}${group === 'municipality' ? '&group=municipality' : ''}`;
+      window.location.href = `${getRepoBasePath()}dettaglio/dettaglio.html?feature=${encodeURIComponent(rawName)}${group === 'municipality' ? '&group=municipality' : ''}`;
     };
     chartWrapper.appendChild(detailBtn);
 
