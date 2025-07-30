@@ -2,6 +2,10 @@ import { createPopupContent } from './elaborazione_stat_data/popup.js';
 import { DataProcessor } from './elaborazione_stat_data/elaborazione_stat_data.js';
 import { DemograficaProcessor ,} from './elaborazione_demografica/elaborazione_demografica_2021.js';
 import { createPopupContentDemografica } from './elaborazione_demografica/popup_demografica.js';
+import { getRepoBasePath } from './utils.js';
+
+const base = getRepoBasePath(); 
+
 
 class MapManager {
   constructor() {
@@ -21,8 +25,8 @@ class MapManager {
     }).addTo(this.map);
 
     const [asc, comuni] = await Promise.all([
-      fetch("data/asc.geojson").then(res => res.json()),
-      fetch("data/comuni.geojson").then(res => res.json())
+      fetch(base + "data/asc.geojson").then(res => res.json()),
+      fetch(base + "data/comuni.geojson").then(res => res.json())
     ]);
 
     this.geojson = asc;
