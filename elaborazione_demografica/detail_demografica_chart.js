@@ -1,3 +1,5 @@
+import { getRepoBasePath } from '../utils.js';
+
 class DetailChartDemografica {
   constructor() {
     this.chartJSLoaded = false;
@@ -27,7 +29,8 @@ class DetailChartDemografica {
 
   async loadDetailData() {
     try {
-      const res = await fetch("../data/demografica_2021_dettaglio.csv");
+      const base = getRepoBasePath();
+      const res = await fetch(base + "data/demografica_2021_dettaglio.csv");
       const text = await res.text();
       const rows = text.trim().split("\n").map(row => row.split(","));
       const header = rows[0].map(h => h.trim());

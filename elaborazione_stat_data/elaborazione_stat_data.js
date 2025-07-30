@@ -1,3 +1,5 @@
+import { getRepoBasePath } from '../utils.js';
+
 export class DataProcessor {
     constructor() {
       this.groupByMunicipality = false;
@@ -8,9 +10,11 @@ export class DataProcessor {
     }
   
     async load() {
+      const base = getRepoBasePath();
+      
       const [csvText, explanationCsv] = await Promise.all([
-        fetch("../data/stat_data.csv").then(res => res.text()),
-        fetch("../data/spiegazione_dati.csv").then(res => res.text())
+        fetch(base + "data/stat_data.csv").then(res => res.text()),
+        fetch(base + "data/spiegazione_dati.csv").then(res => res.text())
       ]);
   
       this.data = Papa.parse(csvText, { header: true }).data;

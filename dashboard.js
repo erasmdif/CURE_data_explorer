@@ -1,3 +1,5 @@
+import { getRepoBasePath } from './utils.js';
+
 class Dashboard {
   constructor() {
     this.selectedFields = new Set();
@@ -15,7 +17,7 @@ class Dashboard {
   }
 
   async loadFieldData() {
-    const response = await fetch("data/spiegazione_dati.csv");
+    const response = await fetch(getRepoBasePath() + "data/spiegazione_dati.csv");
     const csvText = await response.text();
     const data = Papa.parse(csvText, { header: true }).data;
   

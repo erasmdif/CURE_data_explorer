@@ -2,15 +2,13 @@
 export function getRepoBasePath() {
     const path = window.location.pathname;
   
-    // Ottiene il nome della repo GitHub (es. 'CURE_data_explorer')
+    // Sostituisci con il nome esatto della tua repo se cambi
     const repoName = "CURE_data_explorer";
   
-    // Se siamo su GitHub Pages (URL contiene /<repo>/)
     if (path.includes(`/${repoName}/`)) {
       return `/${repoName}/`;
     }
   
-    // In locale
     return "./";
   }
   

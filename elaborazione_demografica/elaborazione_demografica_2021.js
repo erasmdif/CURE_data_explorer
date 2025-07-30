@@ -1,3 +1,5 @@
+import { getRepoBasePath } from '../utils.js';
+
 export class DemograficaProcessor {
   constructor() {
     this.data = [];
@@ -6,8 +8,7 @@ export class DemograficaProcessor {
   }
 
   async load() {
-    console.log("📥 Caricamento dati demografici...");
-    const csvText = await fetch("../data/demografica_2021.csv").then(res => res.text());
+    const csvText = await fetch(getRepoBasePath() + "data/demografica_2021.csv").then(res => res.text());
     this.data = Papa.parse(csvText, { header: true }).data;
 
     this.dataMap = {};
