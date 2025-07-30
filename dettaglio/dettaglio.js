@@ -1,3 +1,5 @@
+import { getRepoBasePath } from "../utils.js";
+
 class DetailPage {
     constructor() {
         this.map = null;
@@ -50,9 +52,9 @@ class DetailPage {
 
     async loadData() {
         const [csvText, geojson, municipalitiesGeoJSON] = await Promise.all([
-            fetch("../data/stat_data.csv").then(res => res.text()),
-            fetch("../data/asc.geojson").then(res => res.json()),
-            fetch("../data/comuni.geojson").then(res => res.json())
+            fetch(`${getRepoBasePath()}data/stat_data.csv`).then(res => res.text()),
+            fetch(`${getRepoBasePath()}data/asc.geojson`).then(res => res.json()),
+            fetch(`${getRepoBasePath()}data/comuni.geojson`).then(res => res.json())
         ]);
 
         this.csvData = Papa.parse(csvText, { header: true }).data;

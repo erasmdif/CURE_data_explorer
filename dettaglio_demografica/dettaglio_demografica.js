@@ -1,3 +1,4 @@
+import { getRepoBasePath } from "../utils.js";
 import { DemograficaProcessor } from "../elaborazione_demografica/elaborazione_demografica_2021.js";
 
 class DettaglioDemografica {
@@ -30,7 +31,7 @@ class DettaglioDemografica {
   }
 
   async loadMap() {
-    const geojson = await fetch("../data/asc.geojson").then((res) => res.json());
+    const geojson = await fetch(`${getRepoBasePath()}data/asc.geojson`).then(res => res.json());
     const feature = geojson.features.find(f =>
       f.properties.COM_ASC1?.toString().trim() === this.featureCode.trim()
     );
