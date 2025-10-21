@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Info • Cure — Collaborative Urban strategies</title>
+
+  <!-- Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stili -->
+  <link rel="stylesheet" href="./info.css" />
+
+  <!-- Libs per parsing & formule -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <!-- MathJax per formule -->
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <div class="hero__badge">CURE • Spoke 5 — TS1</div>
+      <h1 class="hero__title">Collaborative Urban strategies and capacity Enhancement</h1>
+      <p class="hero__subtitle">
+        L’ambito di intervento del progetto <strong>Cure</strong> riguarda la creazione di un ecosistema urbano resiliente,
+        capace di prevenire, mitigare e rispondere ai rischi multipli integrando conoscenze locali e tecniche innovative.
+        Il progetto si concentra sulla gestione del rischio nei contesti urbani e metropolitani, con attenzione alle
+        disuguaglianze socio-economiche e alla percezione del rischio delle comunità. Iniziativa nel programma
+        <strong>RETURN — Multi-Risk science for resilient communities under a changing climate</strong>,
+        <strong>Spoke 5 • “Insediamenti Urbani e Metropolitani”</strong>, finanziata dal <strong>PNRR</strong>,
+        Missione 4 “Istruzione e Ricerca”.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="../index.html">Apri la mappa</a>
+        <a class="btn btn--ghost" href="#datasets">Scopri i dataset</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Obiettivi / Attività -->
+    <section class="section">
+      <div class="split">
+        <div class="card card--glass">
+          <h2 class="section__title">Obiettivi</h2>
+          <p>
+            Sviluppare una strategia collaborativa per la gestione dei rischi urbani, integrando dimensioni storiche e
+            socio-economiche per comprendere la percezione del rischio. Coinvolgere giovani e comunità locali in modelli
+            partecipativi e creare strumenti replicabili per migliorare la resilienza urbana.
+          </p>
+        </div>
+        <div class="card card--glass">
+          <h2 class="section__title">Attività & Beneficiari</h2>
+          <p>
+            Analisi storica delle politiche ambientali dagli anni ’90; interviste a esperti e comunità; mappatura del
+            rischio socio-economico; workshop e seminari; produzione di contenuti digitali (video, e-learning). Beneficiari:
+            comunità locali (con focus sui gruppi vulnerabili), giovani, autorità locali e decisori.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  <!-- CITTÀ -->
+  <section class="section">
+    <h2 class="sec-title">Città focus</h2>
+    <div id="cities-grid" class="cities-grid">
+      <div class="city-card" data-city="Napoli"></div>
+      <div class="city-card" data-city="Genova"></div>
+
+      <!-- Macro-box FVG: span 2 colonne -->
+      <div class="fvg-card" data-cities="Trieste|Monfalcone|Grado|Lignano Sabbiadoro">
+        <div class="fvg-head">Friuli Venezia Giulia</div>
+        <div class="fvg-grid">
+          <div class="mini-city" data-city="Trieste"></div>
+          <div class="mini-city" data-city="Monfalcone"></div>
+          <div class="mini-city" data-city="Grado"></div>
+          <div class="mini-city" data-city="Lignano Sabbiadoro"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- DATASETS -->
+<section class="section" id="datasets">
+  <h2 class="sec-title">Dati disponibili & analisi</h2>
+  <div id="datasets-tabs" class="datasets-tabs"></div>
+  <div id="dataset-details" class="dataset-details"></div>
+</section>
+
+    <!-- Pagine di dettaglio -->
+    <section class="section" id="dettagli">
+      <h2 class="section__title">Pagine di dettaglio</h2>
+      <div class="grid grid--details">
+        <div class="detail-card card">
+          <h3>Dettaglio (popup mappa)</h3>
+          <p>
+            Apri un comune/municipalità dalla mappa per vedere grafici e valori degli indicatori selezionati.
+            I grafici si aggiornano in base all’anno e alle scelte in sidebar.
+          </p>
+          <a class="btn btn--ghost" href="../index.html">Apri mappa</a>
+        </div>
+        <div class="detail-card card">
+          <h3>Dettaglio Demografica (2021)</h3>
+          <p>
+            Per il dataset “Demografica 2021” visualizzi indicatori a livello di municipalità/ASC. Serie non temporale
+            (collegata all’anno 2021).
+          </p>
+          <a class="btn btn--ghost" href="../index.html#demografica">Vai alla sezione</a>
+        </div>
+        <div class="detail-card card">
+          <h3>Detail Timeline (DEM_GEN & Turismo)</h3>
+          <p>
+            Pagina dedicata alla serie storica per comune/anno: selezioni indicatori, range anni, sesso (DEM_GEN) e
+            modalità “%”. Mini-mappe annuali mostrano l’evoluzione del comune selezionato.
+          </p>
+          <a class="btn btn--ghost" href="../detail_timeline_page/index.html">Apri il dettaglio timeline</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© Cure • RETURN — Spoke 5</span>
+      <a class="btn btn--tiny" href="../index.html">Mappa</a>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script type="module" src="./info.js"></script>
+</body>
+</html>

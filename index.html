@@ -16,6 +16,9 @@
   <!-- Stile personalizzato -->
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Timeline CSS -->
+  <link rel="stylesheet" href="./timeline/timeline.css" />
+
   <!-- PapaParse per leggere CSV -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 
@@ -30,101 +33,195 @@
     window.addEventListener('load', () => {
       new Tutorial();
     });
-  </script>  
+  </script>
 
-  <!-- Sidebar -->
-  <div id="sidebar">
-    <h2>Dashboard Dati Territoriali</h2>
-    
-    <div id="grouping-control">
-      <label class="switch">
-        <input type="checkbox" id="group-by-municipality">
-        <span class="slider round"></span>
+<!-- Sidebar -->
+<div id="sidebar">
+  <div class="sidebar-header">
+    <a class="sidebar-info-btn" href="./info/index.html" title="Informazioni e guida">Further details</a>
+  </div>
+
+  <!-- Selettori città -->
+  <div id="city-toggles" class="city-toggle-section">
+    <h3>Dati per città</h3>
+
+    <div class="city-switches">
+      <label class="switch switch-blue">
+        <input type="checkbox" id="toggle-napoli" checked>
+        <span class="slider blue round"></span>
       </label>
-      <span class="switch-label">Principali comuni italiani</span>
+      <span class="city-label">Napoli</span>
     </div>
 
-    <!-- Selettori città (STAT_DATA) -->
-    <div id="city-toggles" class="city-toggle-section">
-      <h3>Dati per città</h3>
+    <div class="city-switches">
+      <label class="switch switch-blue">
+        <input type="checkbox" id="toggle-genova">
+        <span class="slider blue round"></span>
+      </label>
+      <span class="city-label">Genova</span>
+    </div>
+
+    <div class="city-subbox">
+      <div style="font-weight:600;margin-bottom:6px">FVG</div>
 
       <div class="city-switches">
         <label class="switch switch-blue">
-          <input type="checkbox" id="toggle-napoli" checked>
+          <input type="checkbox" id="toggle-trieste">
           <span class="slider blue round"></span>
         </label>
-        <span class="city-label">Napoli</span>
+        <span class="city-label">Trieste</span>
       </div>
 
       <div class="city-switches">
         <label class="switch switch-blue">
-          <input type="checkbox" id="toggle-trento">
+          <input type="checkbox" id="toggle-monfalcone">
           <span class="slider blue round"></span>
         </label>
-        <span class="city-label">Trento</span>
+        <span class="city-label">Monfalcone</span>
       </div>
 
       <div class="city-switches">
         <label class="switch switch-blue">
-          <input type="checkbox" id="toggle-genova">
+          <input type="checkbox" id="toggle-grado">
           <span class="slider blue round"></span>
         </label>
-        <span class="city-label">Genova</span>
+        <span class="city-label">Grado</span>
       </div>
 
-      <small class="city-note">Gli switcher riguardano solo i Dati Statistici. La sezione Demografica resta su Napoli.</small>
-    </div>
-
-    <!-- Rischi ambientali (clippati su ASC attivi) -->
-    <div id="hazard-toggles" class="hazard-toggle-section">
-      <h3>Rischi ambientali</h3>
-
-      <div class="hazard-switches">
-        <label class="switch switch-green">
-          <input type="checkbox" id="toggle-idro">
-          <span class="slider green round"></span>
+      <div class="city-switches">
+        <label class="switch switch-blue">
+          <input type="checkbox" id="toggle-lignano">
+          <span class="slider blue round"></span>
         </label>
-        <span class="hazard-label">Rischio idrogeologico (ISPRA)</span>
-      </div>
-
-      <div class="hazard-switches">
-        <label class="switch switch-green">
-          <input type="checkbox" id="toggle-vulcani">
-          <span class="slider green round"></span>
-        </label>
-        <span class="hazard-label">Pericolo vulcanico</span>
+        <span class="city-label">Lignano</span>
       </div>
     </div>
 
-    <h2>Seleziona ambito</h2>
+    <small class="city-note">La disponibilità dei dataset si adatta ai comuni selezionati.</small>
+  </div>
 
-    <!-- Contenitore delle macro-sezioni -->
-    <div id="ambito-buttons">
-      <!-- Le sezioni verranno generate dinamicamente da JavaScript -->
+  <!-- Rischi ambientali -->
+  <div id="hazard-toggles" class="hazard-toggle-section">
+    <h3>Rischi ambientali</h3>
+    <div class="hazard-switches">
+      <label class="switch switch-green">
+        <input type="checkbox" id="toggle-idro">
+        <span class="slider green round"></span>
+      </label>
+      <span class="hazard-label">Rischio idrogeologico (ISPRA)</span>
     </div>
-
-    <div id="legend">
-      <h3>Legenda</h3>
-      <div id="gradient-bar"></div>
-      <div id="range-values">
-        <span id="min-val">0</span>
-        <span id="max-val">100</span>
-      </div>
+    <div class="hazard-switches">
+      <label class="switch switch-green">
+        <input type="checkbox" id="toggle-vulcani">
+        <span class="slider green round"></span>
+      </label>
+      <span class="hazard-label">Pericolo vulcanico</span>
     </div>
   </div>
+
+  <!-- ======== NUOVA AREA DATASET ======== -->
+  <div id="dataset-area">
+    <div id="dataset-grid" class="dataset-grid"><!-- JS --></div>
+    <hr class="section-sep">
+    <div id="dataset-panel"><!-- JS: ambiti + pill del dataset attivo --></div>
+  </div>
+
+  <!-- Legenda -->
+  <div id="legend">
+    <h3>Legenda</h3>
+    <div id="gradient-bar"></div>
+    <div id="range-values"><span id="min-val">0</span><span id="max-val">100</span></div>
+  </div>
+
+    <!-- Loghi -->
+  <div class="sidebar-logos">
+  <div class="logo"><img src="./images/ismed_logo.png" alt="CNR ISMed"></div>
+  <div class="logo"><img src="./images/logo_erasmo.svg" alt="Erasmo"></div>
+</div>
+</div>
     
   <!-- Mappa -->
   <div id="map"></div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <!-- Chart.js (serve sia a demografica che alla timeline) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
   
+  <!-- Grafici esistenti -->
   <script src="./elaborazione_stat_data/charts.js"></script>
   <script src="./elaborazione_demografica/charts_demografica.js"></script>
   <script type="module" src="./elaborazione_demografica/detail_demografica_chart.js"></script>
-  
+  <script src="./demografica_generale/charts_demografica_generale.js"></script>
+    <script src="./elaborazione_turismo/charts_turismo.js"></script>
+
+  <!-- App principale -->
   <script type="module" src="dashboard.js"></script>
-  <script type="module" src="map.js"></script> 
+  <script type="module" src="map.js"></script>
+
+  <!-- Timeline (dopo map.js così trova window.mapManager al primo refresh) -->
+  <script src="./timeline/timeline_charts.js"></script>
+  <script src="./timeline/timeline.js"></script>
+  
+  
+  <script>
+  // Sostituisce il titolo "Dashboard Dati Territoriali" con un bottone "Further details"
+  (function(){
+    function replaceByText(root, regex){
+      const candidates = root.querySelectorAll('h1,h2,h3,.sidebar-title,.panel-title,.title');
+      for (const el of candidates){
+        if (regex.test(el.textContent || '')){
+          const btn = document.createElement('a');
+          btn.href = './info/index.html';
+          btn.className = 'sidebar-info-btn';
+          btn.textContent = 'Further details';
+          el.replaceWith(btn);
+          return true;
+        }
+      }
+      return false;
+    }
+    if (document.readyState === 'loading'){
+      document.addEventListener('DOMContentLoaded', () => replaceByText(document, /dashboard\s+dati\s+territoriali/i));
+    } else {
+      replaceByText(document, /dashboard\s+dati\s+territoriali/i);
+    }
+  })();
+</script>
+
+<script>
+  // Applica ?ds=<dataset> sulla mappa (attiva il pannello giusto)
+  (function(){
+    const params = new URLSearchParams(location.search);
+    const ds = params.get('ds');
+    const allowed = new Set(['stat_data','demografica','dem_gen','turismo']);
+    if (!ds || !allowed.has(ds)) return;
+
+    function apply(){
+      const dash = window.dashboard;
+      if (!dash) return;
+      dash.activeDataset = ds;
+      dash.renderDatasetButtons();
+      dash.renderDatasetPanel();
+      // scorro alla sezione dataset
+      document.getElementById('dataset-grid')?.scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', apply);
+    } else { apply(); }
+  })();
+</script>
+
+<div id="tutorial-fab" class="tutorial-fab" aria-label="Apri tutorial" title="Apri tutorial">i</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('tutorial-fab')?.addEventListener('click', () => {
+      if (window.openCureTutorial) window.openCureTutorial();
+      else new Tutorial({ forceOpen: true }); // fallback se l'helper non è caricato
+    });
+  });
+</script>
+
 </body>
 </html>

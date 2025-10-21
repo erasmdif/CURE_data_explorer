@@ -1,106 +1,167 @@
 class Tutorial {
-  constructor() {
+  constructor(opts = {}) {
+    this.forceOpen = !!opts.forceOpen;
+
+    // Mostra solo alla prima apertura della sessione, a meno di "forceOpen"
+    this.SS_KEY = 'cure_tutorial_seen_v3';
+    if (!this.forceOpen) {
+      try {
+        if (sessionStorage.getItem(this.SS_KEY) === '1') return;
+        sessionStorage.setItem(this.SS_KEY, '1');
+      } catch (e) { /* no-op */ }
+    }
+
+    // Steps aggiornati
+    // Nota: "target" può essere stringa o array di selettori; verrà usato il primo che esiste.
     this.steps = [
       // 0) Selezione Comuni
       {
         title: "Selezione Comuni",
         content: `
-          <p>Qui puoi scegliere <strong>quali comuni visualizzare</strong> per i dati statistici (<code>STAT_DATA</code>):
-          <em>dati_Napoli</em>, <em>dati_Trento</em>, <em>dati_Genova</em>. Gli switch (blu) sono indipendenti dalla scelta degli indicatori:
-          puoi attivare <strong>una o più città</strong> contemporaneamente.</p>
-          <p><strong>Nota:</strong> la sezione <code>DEMOGRAFICA</code> resta riferita al solo Comune di Napoli.</p>
+          <p>Qui puoi scegliere <strong>per quali comuni visualizzare</strong> i dati.</p>
+          <p>Gli switch (blu) sono indipendenti dagli indicatori: puoi attivare <strong>una o più città</strong> contemporaneamente.</p>
+          <p><strong>Nota:</strong> alcuni dataset sono disponibili solo per certi comuni.</p>
         `,
-        target: "#city-toggles",
+        targets: ["#city-toggles"],
         position: "left"
       },
 
-      // 1) Sezione Statistica
+      // 1) Scelta dataset (i 4 box)
       {
-        title: "Sezione Statistica",
+        title: "Scegli il dataset",
         content: `
-          <p>In questa sezione puoi esplorare tutti i dati statistici disponibili per Quartieri (2021/2022). 
-          Seleziona un ambito per visualizzare gli indicatori disponibili, quindi attivali tramite i checkbox per visualizzare l'entità del fenomeno sulla mappa.</p>
-          <p><strong>Il dato verrà visualizzato raggruppato per Quartiere (COD_ASC2).</strong></p>
+          <p>Seleziona una delle <strong>quattro sezioni</strong>: <code>STAT_DATA</code>, <code>DEMOGRAFICA (2021)</code>, <code>DEMOGRAFICA GENERALE</code>, <code>TURISMO</code>.</p>
+          <p>Si aprirà il pannello con gli <strong>ambiti</strong> e gli <strong>indicatori</strong> disponibili per quel dataset.</p>
+          <p><em>Il bordo rosso sui pulsanti indica che il dataset non è disponibile per almeno uno dei comuni selezionati.</em></p>
         `,
-        target: "#file-section-stat_data",
+        targets: ["#dataset-grid"],
         position: "right"
       },
 
-      // 2) Sezione Demografica
-      {
-        title: "Sezione Demografica",
-        content: `
-          <p>Questa sezione contiene indicatori demografici disponibili alla scala della Municipalità (2021). 
-          Seleziona un ambito per visualizzare gli indicatori disponibili, quindi attivali tramite i checkbox per visualizzare l'entità del fenomeno sulla mappa.</p>
-          <p><strong>Il dato verrà visualizzato raggruppato per Municipalità (COD_ASC1).</strong></p>
-        `,
-        target: "#file-section-demografica",
-        position: "right"
-      },
-
-      // 3) Legenda
-      {
-        title: "Legenda dei valori",
-        content: `
-          <p>L'intensità del fenomeno selezionato sulla mappa viene visualizzata con un <strong>gradiente di rosso</strong>, 
-          dove “100” corrisponde al valore massimo registrato. Le aree con valore = 0 non vengono colorate.</p>
-          <p>Il valore mostrato è un rapporto tra il valore osservato in un’area e la media pesata dello stesso indicatore sull’intero dataset di riferimento.</p>
-          <p><strong>Formula:</strong> 
-          <code>(valore dell'indicatore nell'area / media pesata dell'indicatore) × 100</code></p>
-          <p><strong>IMPORTANTE:</strong> per i dati statistici (<code>stat_data</code>), il confronto è effettuato con la media di tutti i Quartieri italiani (COD_ASC2). 
-          Per i dati demografici, invece, il confronto è interno al solo Comune di Napoli (COD_ASC1).</p>
-        `,
-        target: "#legend",
-        position: "left"
-      },
-
-      // 4) NUOVO: Rischi ambientali
+      // 2) Rischi ambientali (spostato qui)
       {
         title: "Rischi ambientali (Idro/Vulcani)",
         content: `
           <p>Con gli switch (verdi) puoi attivare la sovrapposizione dei <strong>rischi ambientali</strong>:
-          <em>Idro</em> (campo <code>rischio</code>: bassa / media / elevata) e <em>Vulcani</em> (campo <code>zona</code>: ROSSA / GIALLA).</p>
-          <p>Le aree sono disegnate <strong>sopra i layer dei quartieri</strong> con contorni netti e campiture differenziate per livello di rischio, per massima leggibilità.</p>
-          <p><strong>Nota:</strong> questi layer sono <em>indipendenti</em> dagli indicatori selezionati e servono a <strong>contestualizzare</strong> i fenomeni con un quadro di pericolosità.</p>
+          <em>Idro</em> (basso/medio/elevato) e <em>Vulcani</em> (zone ROSSA/GIALLA).</p>
+          <p>I layer si disegnano <strong>sopra</strong> i tematismi e sono <strong>indipendenti</strong> dagli indicatori.</p>
+          <p>Servono a <strong>contestualizzare</strong> i fenomeni con un quadro di pericolosità.</p>
         `,
-        target: "#hazard-toggles",
+        targets: ["#hazard-toggles"],
         position: "left"
       },
 
-      // 5) Grafico Statistico
+      // 3) Focus geografico (informativo)
       {
-        title: "Grafico Statistico",
+        title: "Scala geografica dei dati",
         content: `
-          <p>Seleziona uno o più indicatori da <code>STAT_DATA</code> e clicca sul Quartiere desiderato: 
-          vedrai un grafico con lo stesso rapporto usato per la mappa.</p>
-          <p>Cliccando su <strong>“Dettaglio Completo”</strong> ottieni uno spaccato completo del quartiere selezionato.</p>
+          <p>A seconda del dataset e degli indicatori, il <strong>focus geografico</strong> cambia:</p>
+          <ul>
+            <li><strong>STAT_DATA</strong>: quartieri/ASC per le città abilitate;</li>
+            <li><strong>DEMOGRAFICA (2021)</strong>: <em>Municipalità/ASC</em> (anno di riferimento fisso);</li>
+            <li><strong>DEMOGRAFICA GENERALE</strong>: <em>comune</em> per <em>anno</em> e <em>sesso</em>;</li>
+            <li><strong>TURISMO</strong>: <em>comune</em> per <em>anno</em> e popolazione di riferimento.</li>
+          </ul>
         `,
-        target: null,
+        targets: [],
         position: "center"
       },
 
-      // 6) Grafico Demografico
+      // 4) Legenda
+      {
+        title: "Legenda dei valori",
+        content: `
+          <p>Seleziona gli indicatori: la mappa usa un <strong>gradiente di rosso</strong>, dove il massimo corrisponde al valore più alto nel dominio corrente.</p>
+          <p>Le aree con valore = 0 non vengono colorate. I dettagli sul calcolo sono nella <strong>pagina Info</strong>.</p>
+        `,
+        targets: ["#legend"],
+        position: "left"
+      },
+
+      // 5) Barra del tempo
+      {
+        title: "Barra del tempo",
+        content: `
+          <p>Usa la barra temporale per scegliere l’<strong>anno</strong> (o l’intervallo) di mappa e grafici.</p>
+          <p><strong>Nota:</strong> non tutti i dataset hanno lo stesso arco temporale; p.es. <em>Demografica 2021</em> è puntuale.</p>
+        `,
+        targets: ["#timeline", "#timeline-container", ".timeline", ".timeline-wrapper"],
+        position: "top"
+      },
+
+      // 6) Grafico Statistico
+      {
+        title: "Grafico Statistico",
+        content: `
+          <p>In <code>STAT_DATA</code> seleziona indicatori e clicca un quartiere: vedi il grafico coerente con la mappa.</p>
+          <p>Con <strong>“Dettaglio Completo”</strong> hai lo spaccato del territorio.</p>
+        `,
+        targets: [],
+        position: "center"
+      },
+
+      // 7) Grafico Demografico
       {
         title: "Grafico Demografico",
         content: `
-          <p>Dopo aver selezionato indicatori in <code>DEMOGRAFICA</code>, clicca sulla Municipalità per visualizzare il grafico del rapporto rispetto alla media.</p>
-          <p>Con <strong>“Grafico Funzioni”</strong> puoi vedere la distribuzione del fenomeno per ciascuna sezione (SEZ2011) interna alla Municipalità.</p>
-          <p>Con <strong>“Dettaglio Completo”</strong> ottieni una vista sintetica e completa del territorio selezionato.</p>
+          <p>In <code>DEMOGRAFICA (2021)</code> clicca una Municipalità per il grafico.</p>
+          <p><strong>“Grafico Funzioni”</strong> mostra la distribuzione per <em>SEZ2011</em>; <strong>“Dettaglio Completo”</strong> sintetizza i valori.</p>
         `,
-        target: null,
+        targets: [],
         position: "center"
+      },
+
+      // 8) Dettaglio timeline (DEM_GEN & Turismo)
+      {
+        title: "Dettaglio Timeline (DEM_GEN & Turismo)",
+        content: `
+          <p>Pagina per le <strong>serie storiche per comune</strong>:</p>
+          <ul>
+            <li>selezione indicatori e range anni;</li>
+            <li>filtro per <em>sesso</em> (DEM_GEN) o popolazione (Turismo);</li>
+            <li>modalità <strong>%</strong> (su popolazione media) per confronti normalizzati.</li>
+          </ul>
+          <p>Link: <code>detail_timeline_page/index.html</code>.</p>
+        `,
+        targets: [],
+        position: "center"
+      },
+
+      // 9) Pagina Info
+      {
+        title: "Per saperne di più",
+        content: `
+          <p>Visita la <strong>pagina informativa</strong> per fonti, formule (inclusa la normalizzazione), costruzione dei dataset e linee guida.</p>
+          <p>Apribile anche dal pulsante “Further details” nella sidebar.</p>
+        `,
+        targets: [".sidebar-info-btn", "#sidebar .sidebar-info-btn"],
+        position: "right"
       }
     ];
+
     this.currentStep = 0;
     this.init();
   }
 
+  /* ---------- lifecycle ---------- */
   init() {
     this.createTutorialElements();
     this.showStep(0);
+    window.addEventListener('resize', this._repositionHighlight);
     document.addEventListener('keydown', this.handleKeyPress.bind(this));
   }
 
+  destroy() {
+    window.removeEventListener('resize', this._repositionHighlight);
+    document.removeEventListener('keydown', this.handleKeyPress);
+    try {
+      document.body.removeChild(this.overlay);
+      document.body.removeChild(this.highlightBox);
+      document.body.removeChild(this.tutorialBox);
+    } catch {}
+  }
+
+  /* ---------- DOM scaffolding ---------- */
   createTutorialElements() {
     this.overlay = document.createElement('div');
     this.overlay.className = 'tutorial-overlay';
@@ -152,6 +213,7 @@ class Tutorial {
     document.body.appendChild(this.tutorialBox);
   }
 
+  /* ---------- core ---------- */
   showStep(stepIndex) {
     this.currentStep = stepIndex;
     const step = this.steps[stepIndex];
@@ -168,14 +230,10 @@ class Tutorial {
 
     this.positionTutorialBox(step.position);
 
-    if (step.target) {
-      const targetElement = document.querySelector(step.target);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(() => this.highlightElement(targetElement), 400);
-      } else {
-        this.hideHighlight();
-      }
+    const targetEl = this._resolveTarget(step);
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => this.highlightElement(targetEl), 300);
     } else {
       this.hideHighlight();
     }
@@ -220,13 +278,12 @@ class Tutorial {
     const rect = element.getBoundingClientRect();
     this.highlightBox.style.width = `${rect.width + 20}px`;
     this.highlightBox.style.height = `${rect.height + 20}px`;
-    this.highlightBox.style.top = `${rect.top - 10}px`;
-    this.highlightBox.style.left = `${rect.left - 10}px`;
+    this.highlightBox.style.top = `${rect.top + window.scrollY - 10}px`;
+    this.highlightBox.style.left = `${rect.left + window.scrollX - 10}px`;
     this.highlightBox.style.opacity = '1';
 
     const tutorialRect = this.tutorialBox.getBoundingClientRect();
     const highlightRect = this.highlightBox.getBoundingClientRect();
-
     this.highlightBox.className = 'tutorial-highlight';
 
     if (tutorialRect.left > highlightRect.right) {
@@ -238,10 +295,14 @@ class Tutorial {
     } else {
       this.highlightBox.classList.add('arrow-top');
     }
+
+    // salva el corrente per resize
+    this._currentTargetEl = element;
   }
 
   hideHighlight() {
     this.highlightBox.style.opacity = '0';
+    this._currentTargetEl = null;
   }
 
   nextStep() {
@@ -263,20 +324,35 @@ class Tutorial {
     this.highlightBox.style.opacity = '0';
     this.tutorialBox.style.opacity = '0';
 
-    setTimeout(() => {
-      document.body.removeChild(this.overlay);
-      document.body.removeChild(this.highlightBox);
-      document.body.removeChild(this.tutorialBox);
-    }, 300);
+    setTimeout(() => this.destroy(), 250);
   }
 
-  handleKeyPress(e) {
-    if (e.key === 'ArrowRight') {
-      this.nextStep();
-    } else if (e.key === 'ArrowLeft') {
-      this.prevStep();
-    } else if (e.key === 'Escape') {
-      this.close();
+  handleKeyPress = (e) => {
+    if (e.key === 'ArrowRight') this.nextStep();
+    else if (e.key === 'ArrowLeft') this.prevStep();
+    else if (e.key === 'Escape') this.close();
+  };
+
+  _repositionHighlight = () => {
+    if (!this._currentTargetEl) return;
+    this.highlightElement(this._currentTargetEl);
+  };
+
+  _resolveTarget(step) {
+    // supporta step.target (stringa) o step.targets (array)
+    if (step && Array.isArray(step.targets) && step.targets.length) {
+      for (const sel of step.targets) {
+        const el = document.querySelector(sel);
+        if (el) return el;
+      }
+      return null;
     }
+    if (step && typeof step.target === 'string') {
+      return document.querySelector(step.target) || null;
+    }
+    return null;
   }
 }
+
+// Helper globale per aprire il tutorial on-demand
+window.openCureTutorial = () => new Tutorial({ forceOpen: true });

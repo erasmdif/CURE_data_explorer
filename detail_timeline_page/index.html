@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dettaglio — Serie storiche</title>
+
+  <!-- Inter & Leaflet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
+
+  <!-- Stili -->
+  <link rel="stylesheet" href="./detail_tp.css" />
+
+  <!-- Libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+</head>
+<body>
+
+  <header class="dt-header">
+    <div class="dt-head-left">
+      <h1 id="dt-title">Dettaglio — <span id="dt-comune">—</span></h1>
+      <div class="dt-sub"><span id="dt-ds-pill">—</span> • serie per comune/anno</div>
+    </div>
+    <div class="dt-head-right">
+      <a class="dt-back" href="../index.html">← Torna alla mappa</a>
+    </div>
+  </header>
+
+  <main class="dt-main">
+    <!-- Tabs dataset + switch % -->
+    <div class="dt-dsbar">
+      <div class="dt-tabs" role="tablist">
+        <button id="tab-demogen" class="dt-tab" data-ds="demogen" aria-selected="true">Demografia generale</button>
+        <button id="tab-turismo" class="dt-tab" data-ds="turismo">Turismo</button>
+      </div>
+      <label class="dt-percent">
+        <input type="checkbox" id="dt-percent-toggle">
+        <span>Valori in % (su popolazione media annua)</span>
+      </label>
+    </div>
+
+    <!-- Pannello selezione campi + sesso -->
+    <section class="dt-controls">
+      <div class="dt-controls-row">
+        <div class="dt-block" id="dt-sex-block" style="display:none;">
+          <div class="dt-block-title">Sesso</div>
+          <div class="dt-radio">
+            <label><input type="radio" name="dt-sex" value="Totale" checked> Totale</label>
+            <label><input type="radio" name="dt-sex" value="Maschi"> Maschi</label>
+            <label><input type="radio" name="dt-sex" value="Femmine"> Femmine</label>
+          </div>
+        </div>
+
+        <div class="dt-block dt-fields">
+          <div class="dt-block-title">Campi (clicca per selezionare)</div>
+          <div id="dt-fields-container" class="dt-chips"></div>
+        </div>
+      </div>
+
+      <div class="dt-block">
+        <div class="dt-block-title">
+          Serie storica (linee)
+          <small class="dt-hint" id="dt-hint-comp" style="display:none;">
+            in modalità %: confronto con altri comuni (linee grigie)
+          </small>
+        </div>
+        <div id="dt-lines" class="dt-lines"></div>
+      </div>
+    </section>
+
+    <!-- Range anni + grid mappe -->
+    <section class="dt-timeline">
+      <div class="dt-range-controls">
+        <div class="dt-range-labels">
+          <span>Intervallo anni</span>
+          <span id="dt-range-pill" class="dt-pill">—</span>
+        </div>
+        <div class="dt-range-sliders">
+          <input type="range" id="dt-year-min" min="2000" max="2025" step="1" value="2000" />
+          <input type="range" id="dt-year-max" min="2000" max="2025" step="1" value="2025" />
+        </div>
+        <div class="dt-range-help">Seleziona un intervallo: verrà generata una mappa per ogni anno del range.</div>
+      </div>
+
+      <div id="dt-map-grid" class="dt-map-grid"></div>
+    </section>
+  </main>
+
+  <!-- Moduli -->
+  <script type="module" src="./detail_tp.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+/* timeline/timeline.css */
+#timeline-root {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 1000;
+    pointer-events: none;              /* lascia passare click alla mappa, li ri-abilitiamo dentro */
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+  
+  .timeline-container {
+    max-width: 1200px;
+    margin: 0 auto 8px auto;
+    background: rgba(255,255,255,0.96);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    pointer-events: auto;              /* riattiva i click qui dentro */
+    padding: 12px 14px 10px 14px;
+  }
+  
+  .timeline-header {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; margin-bottom: 8px;
+  }
+  
+  .timeline-title {
+    font-weight: 600; font-size: 14px;
+  }
+  
+  .timeline-year-pill {
+    font-size: 12px; background: #111827; color: #fff;
+    padding: 4px 8px; border-radius: 999px;
+  }
+  
+  .timeline-charts {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 8px;
+  }
+  
+  .timeline-charts canvas {
+    width: 100% !important;
+    height: 220px !important;
+  }
+  
+  .timeline-controls {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  #timeline-year-range {
+    width: 100%;
+    appearance: none;
+    height: 6px;
+    background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+    border-radius: 999px;
+    outline: none;
+  }
+  #timeline-year-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #2563eb; border: 2px solid white; box-shadow: 0 0 0 2px #2563eb;
+    cursor: pointer;
+  }
+  #timeline-year-range::-moz-range-thumb {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #2563eb; border: 2px solid white; box-shadow: 0 0 0 2px #2563eb;
+    cursor: pointer;
+  }
+  
+  .timeline-legend {
+    font-size: 12px; color: #4b5563; margin-top: 2px;
+  }
+  
