@@ -35,111 +35,119 @@
     });
   </script>
 
-<!-- Sidebar -->
-<div id="sidebar">
-  <div class="sidebar-header">
-    <a class="sidebar-info-btn" href="./info/index.html" title="Informazioni e guida">Further details</a>
-  </div>
+  <!-- Hamburger (mobile) -->
+  <button id="hamburger" class="hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="sidebar">
+    <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+  </button>
 
-  <!-- Selettori città -->
-  <div id="city-toggles" class="city-toggle-section">
-    <h3>Dati per città</h3>
+  <!-- Overlay per chiudere la sidebar su mobile -->
+  <div id="sidebar-overlay" tabindex="-1" aria-hidden="true"></div>
 
-    <div class="city-switches">
-      <label class="switch switch-blue">
-        <input type="checkbox" id="toggle-napoli" checked>
-        <span class="slider blue round"></span>
-      </label>
-      <span class="city-label">Napoli</span>
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div class="sidebar-header">
+      <a class="sidebar-info-btn" href="./info/index.html" title="Informazioni e guida">Further details</a>
     </div>
 
-    <div class="city-switches">
-      <label class="switch switch-blue">
-        <input type="checkbox" id="toggle-genova">
-        <span class="slider blue round"></span>
-      </label>
-      <span class="city-label">Genova</span>
-    </div>
-
-    <div class="city-subbox">
-      <div style="font-weight:600;margin-bottom:6px">FVG</div>
+    <!-- Selettori città -->
+    <div id="city-toggles" class="city-toggle-section">
+      <h3>Dati per città</h3>
 
       <div class="city-switches">
         <label class="switch switch-blue">
-          <input type="checkbox" id="toggle-trieste">
+          <input type="checkbox" id="toggle-napoli" checked>
           <span class="slider blue round"></span>
         </label>
-        <span class="city-label">Trieste</span>
+        <span class="city-label">Napoli</span>
       </div>
 
       <div class="city-switches">
         <label class="switch switch-blue">
-          <input type="checkbox" id="toggle-monfalcone">
+          <input type="checkbox" id="toggle-genova">
           <span class="slider blue round"></span>
         </label>
-        <span class="city-label">Monfalcone</span>
+        <span class="city-label">Genova</span>
       </div>
 
-      <div class="city-switches">
-        <label class="switch switch-blue">
-          <input type="checkbox" id="toggle-grado">
-          <span class="slider blue round"></span>
-        </label>
-        <span class="city-label">Grado</span>
+      <div class="city-subbox">
+        <div style="font-weight:600;margin-bottom:6px">FVG</div>
+
+        <div class="city-switches">
+          <label class="switch switch-blue">
+            <input type="checkbox" id="toggle-trieste">
+            <span class="slider blue round"></span>
+          </label>
+          <span class="city-label">Trieste</span>
+        </div>
+
+        <div class="city-switches">
+          <label class="switch switch-blue">
+            <input type="checkbox" id="toggle-monfalcone">
+            <span class="slider blue round"></span>
+          </label>
+          <span class="city-label">Monfalcone</span>
+        </div>
+
+        <div class="city-switches">
+          <label class="switch switch-blue">
+            <input type="checkbox" id="toggle-grado">
+            <span class="slider blue round"></span>
+          </label>
+          <span class="city-label">Grado</span>
+        </div>
+
+        <div class="city-switches">
+          <label class="switch switch-blue">
+            <input type="checkbox" id="toggle-lignano">
+            <span class="slider blue round"></span>
+          </label>
+          <span class="city-label">Lignano</span>
+        </div>
       </div>
 
-      <div class="city-switches">
-        <label class="switch switch-blue">
-          <input type="checkbox" id="toggle-lignano">
-          <span class="slider blue round"></span>
+      <small class="city-note">La disponibilità dei dataset si adatta ai comuni selezionati.</small>
+    </div>
+
+    <!-- Rischi ambientali -->
+    <div id="hazard-toggles" class="hazard-toggle-section">
+      <h3>Rischi ambientali</h3>
+      <div class="hazard-switches">
+        <label class="switch switch-green">
+          <input type="checkbox" id="toggle-idro">
+          <span class="slider green round"></span>
         </label>
-        <span class="city-label">Lignano</span>
+        <span class="hazard-label">Rischio idrogeologico (ISPRA)</span>
+      </div>
+      <div class="hazard-switches">
+        <label class="switch switch-green">
+          <input type="checkbox" id="toggle-vulcani">
+          <span class="slider green round"></span>
+        </label>
+        <span class="hazard-label">Pericolo vulcanico</span>
       </div>
     </div>
 
-    <small class="city-note">La disponibilità dei dataset si adatta ai comuni selezionati.</small>
-  </div>
-
-  <!-- Rischi ambientali -->
-  <div id="hazard-toggles" class="hazard-toggle-section">
-    <h3>Rischi ambientali</h3>
-    <div class="hazard-switches">
-      <label class="switch switch-green">
-        <input type="checkbox" id="toggle-idro">
-        <span class="slider green round"></span>
-      </label>
-      <span class="hazard-label">Rischio idrogeologico (ISPRA)</span>
+    <!-- ======== NUOVA AREA DATASET ======== -->
+    <div id="dataset-area">
+      <div id="dataset-grid" class="dataset-grid"><!-- JS --></div>
+      <hr class="section-sep">
+      <div id="dataset-panel"><!-- JS: ambiti + pill del dataset attivo --></div>
     </div>
-    <div class="hazard-switches">
-      <label class="switch switch-green">
-        <input type="checkbox" id="toggle-vulcani">
-        <span class="slider green round"></span>
-      </label>
-      <span class="hazard-label">Pericolo vulcanico</span>
+
+    <!-- Legenda -->
+    <div id="legend">
+      <h3>Legenda</h3>
+      <div id="gradient-bar"></div>
+      <div id="range-values"><span id="min-val">0</span><span id="max-val">100</span></div>
     </div>
-  </div>
-
-  <!-- ======== NUOVA AREA DATASET ======== -->
-  <div id="dataset-area">
-    <div id="dataset-grid" class="dataset-grid"><!-- JS --></div>
-    <hr class="section-sep">
-    <div id="dataset-panel"><!-- JS: ambiti + pill del dataset attivo --></div>
-  </div>
-
-  <!-- Legenda -->
-  <div id="legend">
-    <h3>Legenda</h3>
-    <div id="gradient-bar"></div>
-    <div id="range-values"><span id="min-val">0</span><span id="max-val">100</span></div>
-  </div>
 
     <!-- Loghi -->
-  <div class="sidebar-logos">
-  <div class="logo"><img src="./images/ismed_logo.png" alt="CNR ISMed"></div>
-  <div class="logo"><img src="./images/logo_erasmo.svg" alt="Erasmo"></div>
-</div>
-</div>
-    
+    <div class="sidebar-logos">
+      <div class="logo"><img src="./images/ismed_logo.png" alt="CNR ISMed"></div>
+      <div class="logo"><img src="./images/logo_erasmo.svg" alt="Erasmo"></div>
+    </div>
+  </div>
+
   <!-- Mappa -->
   <div id="map"></div>
 
@@ -147,13 +155,13 @@
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <!-- Chart.js (serve sia a demografica che alla timeline) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-  
+
   <!-- Grafici esistenti -->
   <script src="./elaborazione_stat_data/charts.js"></script>
   <script src="./elaborazione_demografica/charts_demografica.js"></script>
   <script type="module" src="./elaborazione_demografica/detail_demografica_chart.js"></script>
   <script src="./demografica_generale/charts_demografica_generale.js"></script>
-    <script src="./elaborazione_turismo/charts_turismo.js"></script>
+  <script src="./elaborazione_turismo/charts_turismo.js"></script>
 
   <!-- App principale -->
   <script type="module" src="dashboard.js"></script>
@@ -162,66 +170,127 @@
   <!-- Timeline (dopo map.js così trova window.mapManager al primo refresh) -->
   <script src="./timeline/timeline_charts.js"></script>
   <script src="./timeline/timeline.js"></script>
-  
-  
+
   <script>
-  // Sostituisce il titolo "Dashboard Dati Territoriali" con un bottone "Further details"
-  (function(){
-    function replaceByText(root, regex){
-      const candidates = root.querySelectorAll('h1,h2,h3,.sidebar-title,.panel-title,.title');
-      for (const el of candidates){
-        if (regex.test(el.textContent || '')){
-          const btn = document.createElement('a');
-          btn.href = './info/index.html';
-          btn.className = 'sidebar-info-btn';
-          btn.textContent = 'Further details';
-          el.replaceWith(btn);
-          return true;
+    // Sostituisce il titolo "Dashboard Dati Territoriali" con un bottone "Further details"
+    (function(){
+      function replaceByText(root, regex){
+        const candidates = root.querySelectorAll('h1,h2,h3,.sidebar-title,.panel-title,.title');
+        for (const el of candidates){
+          if (regex.test(el.textContent || '')){
+            const btn = document.createElement('a');
+            btn.href = './info/index.html';
+            btn.className = 'sidebar-info-btn';
+            btn.textContent = 'Further details';
+            el.replaceWith(btn);
+            return true;
+          }
         }
+        return false;
       }
-      return false;
-    }
-    if (document.readyState === 'loading'){
-      document.addEventListener('DOMContentLoaded', () => replaceByText(document, /dashboard\s+dati\s+territoriali/i));
-    } else {
-      replaceByText(document, /dashboard\s+dati\s+territoriali/i);
-    }
-  })();
-</script>
+      if (document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', () => replaceByText(document, /dashboard\s+dati\s+territoriali/i));
+      } else {
+        replaceByText(document, /dashboard\s+dati\s+territoriali/i);
+      }
+    })();
+  </script>
 
-<script>
-  // Applica ?ds=<dataset> sulla mappa (attiva il pannello giusto)
-  (function(){
-    const params = new URLSearchParams(location.search);
-    const ds = params.get('ds');
-    const allowed = new Set(['stat_data','demografica','dem_gen','turismo']);
-    if (!ds || !allowed.has(ds)) return;
+  <script>
+    // Applica ?ds=<dataset> sulla mappa (attiva il pannello giusto)
+    (function(){
+      const params = new URLSearchParams(location.search);
+      const ds = params.get('ds');
+      const allowed = new Set(['stat_data','demografica','dem_gen','turismo']);
+      if (!ds || !allowed.has(ds)) return;
 
-    function apply(){
-      const dash = window.dashboard;
-      if (!dash) return;
-      dash.activeDataset = ds;
-      dash.renderDatasetButtons();
-      dash.renderDatasetPanel();
-      // scorro alla sezione dataset
-      document.getElementById('dataset-grid')?.scrollIntoView({ behavior:'smooth', block:'start' });
-    }
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', apply);
-    } else { apply(); }
-  })();
-</script>
+      function apply(){
+        const dash = window.dashboard;
+        if (!dash) return;
+        dash.activeDataset = ds;
+        dash.renderDatasetButtons();
+        dash.renderDatasetPanel();
+        // scorro alla sezione dataset
+        document.getElementById('dataset-grid')?.scrollIntoView({ behavior:'smooth', block:'start' });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', apply);
+      } else { apply(); }
+    })();
+  </script>
 
-<div id="tutorial-fab" class="tutorial-fab" aria-label="Apri tutorial" title="Apri tutorial">i</div>
+  <div id="tutorial-fab" class="tutorial-fab" aria-label="Apri tutorial" title="Apri tutorial">i</div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('tutorial-fab')?.addEventListener('click', () => {
-      if (window.openCureTutorial) window.openCureTutorial();
-      else new Tutorial({ forceOpen: true }); // fallback se l'helper non è caricato
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('tutorial-fab')?.addEventListener('click', () => {
+        if (window.openCureTutorial) window.openCureTutorial();
+        else new Tutorial({ forceOpen: true }); // fallback se l'helper non è caricato
+      });
     });
-  });
-</script>
+  </script>
+
+  <!-- Toggle sidebar mobile -->
+  <script>
+    (function(){
+      const body = document.body;
+      const btn = document.getElementById('hamburger');
+      const overlay = document.getElementById('sidebar-overlay');
+
+      function isMobile(){ return window.matchMedia('(max-width:1024px)').matches; }
+      function openMenu(){
+        body.classList.add('sidebar-open');
+        btn?.setAttribute('aria-expanded','true');
+        setTimeout(() => window.mapManager?.map?.invalidateSize(true), 300);
+      }
+      function closeMenu(){
+        body.classList.remove('sidebar-open');
+        btn?.setAttribute('aria-expanded','false');
+        setTimeout(() => window.mapManager?.map?.invalidateSize(true), 300);
+      }
+      function toggleMenu(){
+        if (body.classList.contains('sidebar-open')) closeMenu(); else openMenu();
+      }
+
+      function applyInitialState(){
+        if (isMobile()){
+          body.classList.remove('sidebar-open');
+        } else {
+          body.classList.add('sidebar-open');
+        }
+        setTimeout(() => window.mapManager?.map?.invalidateSize(true), 0);
+      }
+
+      btn?.addEventListener('click', toggleMenu);
+      overlay?.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+      window.addEventListener('resize', () => {
+        const open = body.classList.contains('sidebar-open');
+        if (isMobile()){
+          setTimeout(() => window.mapManager?.map?.invalidateSize(true), 150);
+        } else {
+          if (!open) body.classList.add('sidebar-open');
+          setTimeout(() => window.mapManager?.map?.invalidateSize(true), 150);
+        }
+      });
+
+      // Chiude il menu dopo una scelta (opzionale)
+      document.getElementById('sidebar')?.addEventListener('click', (ev) => {
+        if (!isMobile()) return;
+        const tag = (ev.target?.tagName || '').toLowerCase();
+        if (tag === 'a' || (ev.target?.closest('.field-wrapper') && ev.target.tagName === 'INPUT')) {
+          closeMenu();
+        }
+      });
+
+      if (document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', applyInitialState);
+      } else {
+        applyInitialState();
+      }
+    })();
+  </script>
 
 </body>
 </html>

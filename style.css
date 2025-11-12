@@ -228,3 +228,85 @@ body.dettaglio, html{ height:100%; margin:0; padding:0; }
 }
 .tutorial-fab:hover{ filter:brightness(1.06); transform:translateY(-1px) }
 .tutorial-fab:active{ transform:translateY(0) }
+
+/* --- OFF-CANVAS & HAMBURGER (mobile) ----------------------------------- */
+
+/* transizione dolce per la sidebar */
+#sidebar { transition: transform .28s ease; will-change: transform; }
+
+/* overlay che oscura la mappa quando il menu è aperto */
+#sidebar-overlay{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.28);
+  backdrop-filter:saturate(120%) blur(2px);
+  z-index:1005; /* sopra la mappa (1) ma sotto la sidebar (1000) → alziamo anche la sidebar */
+  display:none;
+}
+#sidebar { z-index:1010; } /* sopra l’overlay */
+
+/* hamburger: nascosto su desktop */
+.hamburger{
+  position:fixed; top:12px; left:12px; z-index:1015;
+  display:none; align-items:center; justify-content:center;
+  width:44px; height:44px; border-radius:10px;
+  border:1px solid rgba(0,0,0,.08); background:#fff;
+  box-shadow:0 6px 20px rgba(0,0,0,.12);
+  cursor:pointer;
+}
+.hamburger-box{ position:relative; width:22px; height:16px; }
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after{
+  position:absolute; left:0; right:0; height:2px; background:#1f2937; content:""; transition:transform .2s, opacity .2s;
+}
+.hamburger-inner{ top:50%; transform:translateY(-50%); }
+.hamburger-inner::before{ top:-7px; }
+.hamburger-inner::after{ top:7px; }
+
+/* stato "aperto" → animazione a X */
+body.sidebar-open .hamburger-inner{ transform:rotate(45deg); }
+body.sidebar-open .hamburger-inner::before{ transform:translateY(7px) rotate(90deg); }
+body.sidebar-open .hamburger-inner::after{ opacity:0; transform:translateY(-7px) }
+
+/* --- RESPONSIVE: mobile first per la sidebar off-canvas --- */
+@media (max-width: 1024px){
+  /* Sidebar off-canvas a sinistra */
+  #sidebar{
+    width:min(80vw, 360px);
+    transform:translateX(-100%);
+    left:0; right:auto;
+  }
+  body.sidebar-open #sidebar{ transform:translateX(0); }
+  #sidebar-overlay{ display:none; }
+  body.sidebar-open #sidebar-overlay{ display:block; }
+
+  /* La mappa deve occupare tutto lo schermo */
+  #map{ left:0 !important; }
+
+  /* Mostra l’hamburger */
+  .hamburger{ display:inline-flex; }
+
+  /* Sposta i controlli Leaflet più in basso per non collidere con l’hamburger */
+  .leaflet-top.leaflet-left{ top:64px; }
+
+  /* Timeline: libera dal vincolo dei 320px della sidebar */
+  #timeline,
+  #timeline-bar,
+  .timeline-container,
+  .timeline-bar{
+    left:16px !important;
+    max-width:calc(100vw - 32px) !important;
+  }
+
+  /* Popup più compatti su schermi piccoli */
+  .leaflet-popup-content{
+    min-width:auto !important;
+    max-width:85vw !important;
+  }
+}
+
+/* Desktop: sidebar fissa a sinistra come già ora; niente overlay/hamburger */
+@media (min-width: 1025px){
+  .hamburger{ display:none; }
+  #sidebar-overlay{ display:none !important; }
+}
