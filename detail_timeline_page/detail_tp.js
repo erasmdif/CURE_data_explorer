@@ -5,6 +5,7 @@
 // - In modalità %, confronto con altri comuni (linee grigie)
 
 import { getRepoBasePath } from '../utils.js';
+import { addBaseMap } from '../basemap.js';
 
 const norm = (s) => String(s||'')
   .toLowerCase()
@@ -627,14 +628,13 @@ class DetailTimelinePage {
 
     // Leaflet mini mappa
     const map = L.map(body, {
-      zoomControl: false, attributionControl: false,
+      zoomControl: false, attributionControl: true,
       scrollWheelZoom: false, dragging: false, doubleClickZoom: false, boxZoom: false, keyboard: false, tap: false,
       zoomAnimation: false, fadeAnimation: false
     });
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      subdomains: 'abcd', maxZoom: 19, updateWhenIdle: true, updateWhenZooming: false
-    }).addTo(map);
+    map.attributionControl.setPrefix(false);
+    addBaseMap(map, { updateWhenZooming: false });
 
     const layer = L.geoJSON({ type: 'FeatureCollection', features: [this.comuneFeature] }, {
       style: { fillColor: 'transparent', fillOpacity: 0.5, color: '#666', weight: 0.8 }

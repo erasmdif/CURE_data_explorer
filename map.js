@@ -7,6 +7,7 @@ import { createPopupContentDemograficaGenerale } from './demografica_generale/po
 import { getRepoBasePath } from './utils.js';
 import { TurismoProcessor } from './elaborazione_turismo/elaborazione_turismo.js';
 import { createPopupContentTurismo } from './elaborazione_turismo/popup_turismo.js';
+import { addBaseMap } from './basemap.js';
 
 const base = getRepoBasePath();
 
@@ -39,11 +40,7 @@ class MapManager {
   }
 
   async initBaseMap() {
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; OpenStreetMap &copy; CARTO',
-      subdomains: 'abcd',
-      maxZoom: 19
-    }).addTo(this.map);
+    addBaseMap(this.map);
 
     const [
       asc, comuni, ascGenova, idro, vulcani

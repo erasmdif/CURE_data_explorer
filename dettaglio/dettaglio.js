@@ -1,4 +1,5 @@
 import { getRepoBasePath } from "../utils.js";
+import { addBaseMap } from '../basemap.js';
 
 class DetailPage {
   constructor() {
@@ -136,11 +137,7 @@ class DetailPage {
     const featureBounds = L.geoJSON(this.featureData).getBounds();
     this.map = L.map('detail-map').fitBounds(featureBounds);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; OpenStreetMap &copy; CARTO',
-      subdomains: 'abcd',
-      maxZoom: 19
-    }).addTo(this.map);
+    addBaseMap(this.map);
 
     // contesto: tutte le aree note (somma dei 3 geojson)
     L.geoJSON(this.geojson, {

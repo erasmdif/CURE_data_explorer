@@ -1,4 +1,5 @@
 import { getRepoBasePath } from "../utils.js";
+import { addBaseMap } from '../basemap.js';
 import { DemograficaProcessor } from "../elaborazione_demografica/elaborazione_demografica_2021.js";
 
 class DettaglioDemografica {
@@ -44,11 +45,7 @@ class DettaglioDemografica {
     const bounds = L.geoJSON(feature).getBounds();
     this.map = L.map("detail-map").fitBounds(bounds);
 
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      subdomains: "abcd",
-      maxZoom: 18
-    }).addTo(this.map);
+    addBaseMap(this.map, { maxZoom: 18 });
 
     L.geoJSON(geojson, {
       style: {
